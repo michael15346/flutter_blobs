@@ -84,7 +84,9 @@ Path connectPoints(BlobCurves curves) {
 
 void drawBlob(Canvas canvas, Path path, BlobStyles? styles) {
   Paint paint = createPaint(styles);
-  print("asjkdfhlsakdjfhalk");
-  canvas.drawShadow(path, Colors.red.withOpacity(0.8), 10, true);
+
+  Shadow shadow = Shadow(blurRadius: 50, color: styles?.color ?? paint.color);
+  canvas.drawPath(path, shadow.toPaint());
+  //canvas.drawShadow(path, Colors.red.withOpacity(0.8), 10, true);
   canvas.drawPath(path, paint);
 }
