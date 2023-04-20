@@ -87,7 +87,7 @@ void drawBlob(Canvas canvas, Path path, BlobStyles? styles) {
 
   Shadow shadow = Shadow(
       blurRadius: 50,
-      color: styles?.color.withOpacity(0.9) ?? paint.color.withOpacity(0.9));
+      color: styles?.color?.withOpacity(0.9) ?? paint.color.withOpacity(0.9));
   canvas.drawPath(path, shadow.toPaint());
   //canvas.drawShadow(path, Colors.red.withOpacity(0.8), 10, true);
   canvas.drawPath(path, paint);
